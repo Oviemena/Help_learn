@@ -1,31 +1,33 @@
 {
   "compilerOptions": {
-    // Environment setup & latest features
-   "lib": ["ESNext"],
-    "module": "esnext",
+    // Environment and module configuration
     "target": "esnext",
-    // "strict": true,
-    // "esModuleInterop": true,
-    // "skipLibCheck": true,
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["esnext"],
+    
+    // Output configuration
     "outDir": "dist",
-    "allowSyntheticDefaultImports": true,
-
-    // Bundler mode
-    // "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
     "noEmit": true,
-
-    // Best practices
+    
+    // Module interop settings
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    
+    // Type checking
     "strict": true,
     "skipLibCheck": true,
+    
+    // Additional safety checks
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
-
-    // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
-  }
+    
+    // Code organization
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*"]
+    }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
